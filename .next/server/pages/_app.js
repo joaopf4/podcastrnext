@@ -93,38 +93,236 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./pages/_app.js":
-/*!***********************!*\
-  !*** ./pages/_app.js ***!
-  \***********************/
-/*! exports provided: default */
+/***/ 0:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("hUgY");
+
+
+/***/ }),
+
+/***/ "BLsd":
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {
+	"playerContainer": "styles_playerContainer__2kTpC",
+	"empty": "styles_empty__XvMyC",
+	"emptyPlayer": "styles_emptyPlayer__WHPi6",
+	"progress": "styles_progress__ULW9V",
+	"slider": "styles_slider__3_Mkb",
+	"emptySlider": "styles_emptySlider__3p9Ad",
+	"buttons": "styles_buttons__i4fo8",
+	"playButton": "styles_playButton__fmvI6"
+};
+
+
+/***/ }),
+
+/***/ "F5FC":
+/***/ (function(module, exports) {
+
+module.exports = require("react/jsx-runtime");
+
+/***/ }),
+
+/***/ "JmTP":
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {
+	"headerContainer": "styles_headerContainer__3jyUX"
+};
+
+
+/***/ }),
+
+/***/ "RvHN":
+/***/ (function(module, exports) {
+
+module.exports = require("date-fns/locale/pt-BR");
+
+/***/ }),
+
+/***/ "Skji":
+/***/ (function(module, exports) {
+
+module.exports = require("date-fns/format");
+
+/***/ }),
+
+/***/ "TpEK":
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {
+	"wrapper": "app_wrapper__X8llh"
+};
+
+
+/***/ }),
+
+/***/ "hUgY":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n\nvar _jsxFileName = \"/home/joaopfa/Desktop/Cursos e imers\\xF5es/NLW 05 Podcastr/podcastrnext/pages/_app.js\";\n\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nfunction MyApp({\n  Component,\n  pageProps\n}) {\n  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__[\"jsxDEV\"])(Component, _objectSpread({}, pageProps), void 0, false, {\n    fileName: _jsxFileName,\n    lineNumber: 3,\n    columnNumber: 10\n  }, this);\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (MyApp);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9wYWdlcy9fYXBwLmpzP2Q1MzAiXSwibmFtZXMiOlsiTXlBcHAiLCJDb21wb25lbnQiLCJwYWdlUHJvcHMiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7OztBQUNBLFNBQVNBLEtBQVQsQ0FBZTtBQUFFQyxXQUFGO0FBQWFDO0FBQWIsQ0FBZixFQUF5QztBQUN2QyxzQkFBTyxxRUFBQyxTQUFELG9CQUFlQSxTQUFmO0FBQUE7QUFBQTtBQUFBO0FBQUEsVUFBUDtBQUNEOztBQUVjRixvRUFBZiIsImZpbGUiOiIuL3BhZ2VzL19hcHAuanMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJcbmZ1bmN0aW9uIE15QXBwKHsgQ29tcG9uZW50LCBwYWdlUHJvcHMgfSkge1xuICByZXR1cm4gPENvbXBvbmVudCB7Li4ucGFnZVByb3BzfSAvPlxufVxuXG5leHBvcnQgZGVmYXVsdCBNeUFwcFxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./pages/_app.js\n");
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__("F5FC");
+
+// EXTERNAL MODULE: ./src/styles/global.scss
+var global = __webpack_require__("t+Ps");
+
+// EXTERNAL MODULE: ./src/styles/app.module.scss
+var app_module = __webpack_require__("TpEK");
+var app_module_default = /*#__PURE__*/__webpack_require__.n(app_module);
+
+// EXTERNAL MODULE: external "date-fns/format"
+var format_ = __webpack_require__("Skji");
+var format_default = /*#__PURE__*/__webpack_require__.n(format_);
+
+// EXTERNAL MODULE: external "date-fns/locale/pt-BR"
+var pt_BR_ = __webpack_require__("RvHN");
+var pt_BR_default = /*#__PURE__*/__webpack_require__.n(pt_BR_);
+
+// EXTERNAL MODULE: ./src/components/Header/styles.module.scss
+var styles_module = __webpack_require__("JmTP");
+var styles_module_default = /*#__PURE__*/__webpack_require__.n(styles_module);
+
+// CONCATENATED MODULE: ./src/components/Header/index.tsx
+
+
+
+
+
+function Header() {
+  const currentDate = format_default()(new Date(), 'EEEEEE, d, MMM', {
+    locale: pt_BR_default.a
+  });
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("header", {
+    className: styles_module_default.a.headerContainer,
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("img", {
+      src: "/logo.svg",
+      alt: "Podcaster"
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("p", {
+      children: "O melhor para voc\xEA ouvir, sempre"
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+      children: currentDate
+    })]
+  });
+}
+// EXTERNAL MODULE: ./src/components/Player/styles.module.scss
+var Player_styles_module = __webpack_require__("BLsd");
+var Player_styles_module_default = /*#__PURE__*/__webpack_require__.n(Player_styles_module);
+
+// CONCATENATED MODULE: ./src/components/Player/index.tsx
+
+
+
+function Player() {
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+    className: Player_styles_module_default.a.playerContainer,
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("header", {
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("img", {
+        src: "/playing.svg",
+        alt: "Tocando agora"
+      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+        children: "Tocando agora"
+      })]
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+      className: Player_styles_module_default.a.emptyPlayer,
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("strong", {
+        children: "Selecione um podcast para ouvir"
+      })
+    }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("footer", {
+      className: Player_styles_module_default.a.empty,
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: Player_styles_module_default.a.progress,
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+          children: "00:00"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+          className: Player_styles_module_default.a.slider,
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+            className: Player_styles_module_default.a.emptySlider
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+          children: "00:00"
+        })]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: Player_styles_module_default.a.buttons,
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+          type: "button",
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("img", {
+            src: "/shuffle.svg",
+            alt: "Embaralhar"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+          type: "button",
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("img", {
+            src: "/play-previous.svg",
+            alt: "Tocar anterior"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+          type: "button",
+          className: Player_styles_module_default.a.playButton,
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("img", {
+            src: "/play.svg",
+            alt: "Tocar"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+          type: "button",
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("img", {
+            src: "/play-next.svg",
+            alt: "Tocar pr\xF3xima"
+          })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+          type: "button",
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("img", {
+            src: "/repeat.svg",
+            alt: "Repetir"
+          })
+        })]
+      })]
+    })]
+  });
+}
+// CONCATENATED MODULE: ./src/pages/_app.tsx
+
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+function MyApp({
+  Component,
+  pageProps
+}) {
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+    className: app_module_default.a.wrapper,
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("main", {
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(Header, {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])(Component, _objectSpread({}, pageProps))]
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(Player, {})]
+  });
+}
+
+/* harmony default export */ var _app = __webpack_exports__["default"] = (MyApp);
 
 /***/ }),
 
-/***/ 0:
-/*!****************************************!*\
-  !*** multi private-next-pages/_app.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_app.js");
-
-
-/***/ }),
-
-/***/ "react/jsx-dev-runtime":
-/*!****************************************!*\
-  !*** external "react/jsx-dev-runtime" ***!
-  \****************************************/
-/*! no static exports found */
+/***/ "t+Ps":
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"react/jsx-dev-runtime\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJyZWFjdC9qc3gtZGV2LXJ1bnRpbWVcIj9jZDkwIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6InJlYWN0L2pzeC1kZXYtcnVudGltZS5qcyIsInNvdXJjZXNDb250ZW50IjpbIm1vZHVsZS5leHBvcnRzID0gcmVxdWlyZShcInJlYWN0L2pzeC1kZXYtcnVudGltZVwiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///react/jsx-dev-runtime\n");
+
 
 /***/ })
 
