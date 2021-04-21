@@ -4,9 +4,25 @@ import { useEffect } from "react"
 // aí se fazem melhores os outros métodos:
 // SSR Server Side Rendering
 // SSG
+import { GetStaticProps } from 'next';
+import { format, parseISO } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
+import { api } from "../services/api";
+import { convertDurationToTimeString } from "../utils/converDurationToTimeString";
+
+type Episode = {
+  id: string;
+  title: string;
+  members: string;
+  //...
+}
+
+type HomeProps = {
+  episodes: Episode[];
+}
 
 
-export default function Home(props) {
+export default function Home(props: HomeProps) {
   // SPA: esse método n possibilita a iondexação por parte dos crowlers, 
   // por estes n aguardam a chamada completa da api finalizar para então 
   // coletar as infos disponíveis na página pra indexar no google e tals
@@ -25,9 +41,29 @@ export default function Home(props) {
 }
 
 //SSG Static Server Generation
-export async function getStaticProps() {
-  const response = await fetch('http://localhost:3333/episodes')
-  const data = await response.json()
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await api.get('episodes', {
+    params: {
+      _limit: 12,
+      _sort: 'published_at',
+      _order: 'desc'
+    }
+  })
+
+  const episodes = data.map(episode => {
+    return {
+      id: episode.id,
+      title: episode.title,
+      thumbnail: episode.thumbnail,
+      members: episode.members,
+      publishedAt: format(parseISO(episode.published_at), 'd MMM yy', { locale: ptBR }),
+      duration: Number(episode.file.duration),
+      durationAsString: convertDurationToTimeString(Number(episode.file.duration)),
+      description: episode.description,
+      url: episode.file.url
+    };
+  })
+
   return{
     props: {
       episodes: data,
