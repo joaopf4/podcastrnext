@@ -1,6 +1,6 @@
 //formas de consumo de uma api em next
 // SPA se precisamos que as infos sejam carregadas no momento q o user acessa a página,
-import { useContext, useEffect } from "react"
+import { useEffect } from "react"
 // aí se fazem melhores os outros métodos:
 // SSR Server Side Rendering
 // SSG
@@ -9,10 +9,11 @@ import { convertDurationToTimeString } from "../utils/converDurationToTimeString
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
-import { PlayerContext } from "../contexts/PlayerContext";
+import { usePlayer } from "../contexts/PlayerContext";
 import { api } from "../services/api";
 
 import Image from 'next/image';
+import Head from 'next/head';
 import Link from 'next/link';
 import styles from './home.module.scss';
 
@@ -44,14 +45,21 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
   //   .then(data => console.log(data))
   // }, [])
 
-  const { play } = useContext(PlayerContext);
+  const { playList } = usePlayer();
+  const episodeList = [...latestEpisodes, ...allEpisodes];
 
   return (
     <div className={styles.homepage}>
+
+      <Head>
+        <title>Home | Podcastr</title>
+      </Head>
+
       <section className={styles.latestEpisodes}>
         <h2>Últimos lançamentos</h2>
+
         <ul>
-          {latestEpisodes.map(episode => {
+          {latestEpisodes.map((episode, index) => {
             return (
               <li key={episode.id}>
                 <Image 
@@ -61,6 +69,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   alt={episode.title} 
                   objectFit="cover"
                 />
+
                 <div className={styles.episodeDetails}>
                   <Link href={`/episodes/${episode.id}`}>
                     <a>{episode.title}</a>
@@ -69,13 +78,15 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   <span>{episode.publishedAt}</span>
                   <span>{episode.durationAsString}</span>
                 </div>
-                <button type="button" onClick={() => play(episode)}>  //sempre q passo uma func. c/ parametr/. dentro de onClick, usar func. anonima
+
+                <button type="button" onClick={() => playList(episodeList, index)}>  //sempre q passo uma func. c/ parametr/. dentro de onClick, usar func. anonima
                   <img src="/play-green.svg" alt="Tocar episódio" />
                 </button>
               </li>
             )
           })}
         </ul>
+
       </section>
       <section className={styles.allEpisodes}>
         <h2>Todos os episódios</h2>
@@ -92,7 +103,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
             </tr>
           </thead>
           <tbody>
-            {allEpisodes.map(episode => {
+            {allEpisodes.map((episode, index) => {
               return (
                 <tr key={episode.id}>
                   <td style={{width: 72}}>
@@ -113,7 +124,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   <td style={{width: 100}}>{episode.publishedAt}</td>
                   <td>{episode.durationAsString}</td>
                   <td>
-                    <button type="button">
+                    <button type="button" onClick={() => playList(episodeList, index + latestEpisodes.length)} >
                       <img src="/play-green.svg" alt="Tocar episódio" />
                     </button>
                   </td>
