@@ -1,16 +1,19 @@
 //formas de consumo de uma api em next
 // SPA se precisamos que as infos sejam carregadas no momento q o user acessa a página,
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
 // aí se fazem melhores os outros métodos:
 // SSR Server Side Rendering
 // SSG
 import { GetStaticProps } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
+import { convertDurationToTimeString } from "../utils/converDurationToTimeString";
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+
+import { PlayerContext } from "../contexts/PlayerContext";
 import { api } from "../services/api";
-import { convertDurationToTimeString } from "../utils/converDurationToTimeString";
+
+import Image from 'next/image';
+import Link from 'next/link';
 import styles from './home.module.scss';
 
 type Episode = {
@@ -41,6 +44,8 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
   //   .then(data => console.log(data))
   // }, [])
 
+  const { play } = useContext(PlayerContext);
+
   return (
     <div className={styles.homepage}>
       <section className={styles.latestEpisodes}>
@@ -64,7 +69,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   <span>{episode.publishedAt}</span>
                   <span>{episode.durationAsString}</span>
                 </div>
-                <button type="button">
+                <button type="button" onClick={() => play(episode)}>  //sempre q passo uma func. c/ parametr/. dentro de onClick, usar func. anonima
                   <img src="/play-green.svg" alt="Tocar episódio" />
                 </button>
               </li>
