@@ -31,7 +31,6 @@ export function Player() {
     } = usePlayer();
 
     const screenSize = useMediaQuery({ query: `(max-width: 1080px)` });
-    console.log(screenSize);
 
     function setupProgressListener() {
       audioRef.current.currentTime = 0;
