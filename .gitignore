@@ -12,6 +12,7 @@
 /.next/
 /out/
 .next/server
+.next/static
 
 # production
 /build
