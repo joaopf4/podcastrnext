@@ -2,6 +2,14 @@
     padding: 0 4rem;
     height: calc(100vh - 6.5rem); //faz com q a div .homepage tenha o tamanho todo que sobra da tela tirando 6.5rem, q é a medida de altura do cabeçalho
     overflow-y: scroll; //faz ter scroll só nessa div
+    width: inherit;
+
+    @media only screen and (max-width: 1080px) {
+        height: calc(100vh - 20rem);
+        @media only screen and (max-width: 530px) {
+            padding: 0 1rem;
+        }
+    }
     h2 {
         margin-top: 3rem;
         margin-bottom: 1.5rem;
@@ -13,6 +21,9 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
+        @media (max-width: 925px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
         li {
             background: var(--white);
             border: 1px solid var(--gray-100);
@@ -23,6 +34,10 @@
             display: flex;
             align-items: center;
 
+            @media (max-width: 530px) {
+                width: 90vw;
+            }
+
             img {
                 width: 6rem;
                 height: 6rem;
@@ -31,6 +46,9 @@
             .episodeDetails {
                 flex: 1;
                 margin-left: 1rem;
+                @media (max-width: 530px) {
+                    width: 100%;
+                }
 
                 a {
                     display: block;
@@ -113,6 +131,9 @@
         th, td {
             padding: 0.75rem 1rem;
             border-bottom: 1px solid var(--gray-100);
+            @media only screen and (max-width: 530px) {
+                padding: 0.15rem 0.4rem;
+            }
         }
         th {
             color: var(--gray-200);
@@ -127,6 +148,10 @@
                 width: 2.5rem;
                 height: 2.5rem;
                 border-radius: 0.5rem;
+                @media only screen and (max-width: 530px) {
+                    width: 0rem;
+                    height: 0rem;
+                }
             }
             a {
                 color: var(--gray-800);
@@ -149,6 +174,10 @@
                 font-size: 0;
                 
                 transition: filter 0.2s;
+
+                @media (max-width: 530px) {
+                    align-self: center;
+                }
 
                 img {
                     width: 1.25rem;

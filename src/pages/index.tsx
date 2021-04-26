@@ -5,6 +5,7 @@ import { useEffect } from "react"
 // SSR Server Side Rendering
 // SSG
 import { GetStaticProps } from 'next';
+import { useMediaQuery } from 'react-responsive';
 import { convertDurationToTimeString } from "../utils/converDurationToTimeString";
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
@@ -47,6 +48,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
 
   const { playList } = usePlayer();
   const episodeList = [...latestEpisodes, ...allEpisodes];
+  const mobSize = useMediaQuery({ query: `(max-width: 530px)` });
 
   return (
     <div className={styles.homepage}>
@@ -86,15 +88,15 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
             )
           })}
         </ul>
-
       </section>
+
       <section className={styles.allEpisodes}>
         <h2>Todos os episódios</h2>
 
         <table cellSpacing={0}>
           <thead>
             <tr>
-              <th></th>
+            { !mobSize && <th></th>}
               <th>Podcast</th>
               <th>Integrantes</th>
               <th>Data</th>
@@ -106,15 +108,17 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
             {allEpisodes.map((episode, index) => {
               return (
                 <tr key={episode.id}>
-                  <td style={{width: 72}}>
-                    <Image 
-                      width={120}
-                      height={120}
-                      src={episode.thumbnail}
-                      alt={episode.title}
-                      objectFit="cover"
-                    />
-                  </td>
+                  { !mobSize &&
+                    <td style={{width: 72}}>
+                      <Image 
+                        width={120}
+                        height={120}
+                        src={episode.thumbnail}
+                        alt={episode.title}
+                        objectFit="cover"
+                      />
+                    </td> 
+                  }
                   <td>
                   <Link href={`/episodes/${episode.id}`}>
                     <a>{episode.title}</a>
