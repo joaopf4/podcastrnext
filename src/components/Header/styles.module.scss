@@ -1,7 +1,8 @@
 .headerContainer {
     background: var(--white);
     height: 6.5rem; //6,5 x 16(px) = 104px;
-
+    width: inherit;
+    
     display: flex;
     align-items: center;
 

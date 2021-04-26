@@ -2,6 +2,11 @@
     padding: 0 4rem;
     height: calc(100vh - 6.5rem); //faz com q a div .homepage tenha o tamanho todo que sobra da tela tirando 6.5rem, q é a medida de altura do cabeçalho
     overflow-y: scroll; //faz ter scroll só nessa div
+    width: inherit;
+
+    @media only screen and (max-width: 1080px) {
+        height: calc(100vh - 20rem);
+    }
     h2 {
         margin-top: 3rem;
         margin-bottom: 1.5rem;

@@ -11,15 +11,36 @@
     align-items: center;
     justify-content: space-between;
 
+    @media (max-width: 1080px) {
+        width: 100vw;
+        height: calc(100vh - (100vh - 20rem) - 6.5rem);
+        padding: 1rem 2rem;
+        justify-content: space-around;
+        header {
+            width: 100%;
+            // justify-content: space-between;
+        }
+    }
+
     header {
         display: flex;
         align-items: center;
-        gap: 1rem; //tanto em flex qto em grid, colocar espaçamento entre elementos do header
+        gap: 1rem; //tanto em flex qto em grid, coloca espaçamento entre elementos do header
+        .headerIcon {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            @media (max-width: 1080px) {
+                // align-self: flex-start;
+                // position: absolute;
+            }
+        }
     }
 
     strong {
         font-family: Lexend, sans-serif;
         font-weight: 600;
+        display: inline;
     }
 
     footer {
@@ -33,6 +54,18 @@
 
 .currentEpisode {
     text-align: center;
+
+    @media (max-width: 1080px) {
+        margin: 0 auto;
+        width: 60vw;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @keyframes marquee {
+            0%   { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+    }
     
     img {
         border-radius: 1.5rem;
@@ -43,6 +76,13 @@
         margin-top: 2rem;
         font: 600 1.25rem Lexend, sans-serif;
         line-height: 1.75rem;
+        @media (max-width: 1080px) {
+            margin: 0;
+            font: 300 0.95rem Lexend, sans-serif;
+            width: max-content;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+        }
     }
 
     span {
@@ -50,6 +90,14 @@
        margin-top: 1rem;
        opacity: 0.6;
        line-height: 1.5rem; 
+       @media (max-width: 1080px) {
+            margin: 0;
+            line-height: 1rem;
+            font-size: 0.85rem;
+            width: fit-content;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+        }
     }
 }
 
@@ -66,6 +114,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 1080px) {
+        margin: 0 auto;
+        padding: .4rem;
+        width: fit-content;
+        height: fit-content;
+    }
 }
 
 .progress {
@@ -93,6 +148,9 @@
     align-items: center;
     justify-content: center;
     margin-top: 2.5rem;
+    @media (max-width: 1080px) {
+        margin-top: 1rem;
+    }
     gap: 1.5rem;
     button {
         background: transparent;

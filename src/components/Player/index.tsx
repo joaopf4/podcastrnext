@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
@@ -28,6 +29,9 @@ export function Player() {
       hasNext,
       hasPrevious
     } = usePlayer();
+
+    const screenSize = useMediaQuery({ query: `(max-width: 1080px)` });
+    console.log(screenSize);
 
     function setupProgressListener() {
       audioRef.current.currentTime = 0;
@@ -66,11 +70,24 @@ export function Player() {
     return (
       <div className={styles.playerContainer}>
         <header>
-          <img src="/playing.svg" alt="Tocando agora" />
-          <strong>Tocando agora</strong>
+          <div className={styles.headerIcon}>
+            <img src="/playing.svg" alt="Tocando agora" />
+            <strong>Tocando agora</strong>
+          </div>
+          {(episode && screenSize) && (
+            <div className={styles.currentEpisode}>
+                <strong>{episode.title}</strong>
+                <span>{episode.members}</span>
+            </div>          
+          )}
+          {(!episode && screenSize) && (
+          <div className={styles.emptyPlayer}>
+            <strong>Selecione um podcast para ouvir</strong>
+          </div>
+        )}
         </header>
 
-        {episode ? (
+        {(episode && !screenSize) && (
           <div className={styles.currentEpisode}>
             <Image
               width={592}
@@ -81,7 +98,8 @@ export function Player() {
             <strong>{episode.title}</strong>
             <span>{episode.members}</span>
           </div>
-        ) : (
+        )} 
+        {(!episode && !screenSize) && (
           <div className={styles.emptyPlayer}>
             <strong>Selecione um podcast para ouvir</strong>
           </div>
